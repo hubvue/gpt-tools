@@ -2,7 +2,7 @@
   <main class="px-7 py-36 main mx-auto">
     <section>
       <h1>Tools</h1>
-      <h6>基于 ChatGPT 做一些定向能力的工具</h6>
+      <h6>基于 ChatGPT 做一些定向能力的工具。</h6>
     </section>
     <div class="mt-12">
       <RouterLink class="item rounded-md" :to="tool.path" v-for="(tool, index) in tools" :key="index">
