@@ -1,0 +1,38 @@
+name: Deploy
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [14.x]
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v2
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+    - run: echo "----- `node -v` -----"
+    - run: echo "----- `npm -v` -----"
+    - run: echo "----- install dependencies -----"
+    - run: npm install
+    - run: echo "----- build -----"
+    - run: npm run build
+    - run: echo "----- deploy -----"
+    - name: deploy
+      uses: easingthemes/ssh-deploy@v2
+      env:
+        SSH_PRIVATE_KEY: ${{ secrets.ACCESS_TOKEN }}
+        REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
+        REMOTE_USER: ${{ secrets.REMOTE_USER }}
+        ARGS: -avzr --delete
+        SOURCE: public/
+        TARGET: /root/code/public/
+    - run: echo "----- deploy done -----"
