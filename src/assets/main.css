@@ -1,3 +1,175 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --fg: #555;
+  --fg-deep: #222;
+  --fg-deeper: #000;
+
+  --c-bg: #fff;
+  --c-scrollbar: #eee;
+  --c-scrollbar-hover: #bbb;
+}
+
+html {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--fg);
+  background-color: var(--c-bg);
+  overflow: scroll;
+}
+
+html.dark {
+  --fg: #bbb;
+  --fg-deep: #ddd;
+  --fg-deeper: #fff;
+
+  --c-bg: #050505;
+  --c-scrollbar: #111;
+  --c-scrollbar-hover: #222;
+}
+
+a {
+  font-weight: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(125, 125, 125, 0.3);
+  transition: border 0.3s ease-in-out;
+}
+
+a:hover {
+  border-bottom: 1px solid var(--fg);
+}
+
+a {
+  color: var(--fg-deeper);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+strong {
+  color: var(--fg-deep);
+  font-weight: 600;
+}
+
+h1 {
+  color: var(--fg-deeper);
+  font-weight: 800;
+  font-size: 2.25em;
+  margin-top: 0;
+  margin-bottom: 0.8888889em;
+  line-height: 1.1111111;
+}
+h2 {
+  color: var(--fg-deep);
+  font-weight: 700;
+  font-size: 1.5em;
+  margin-top: 2em;
+  margin-bottom: 1em;
+  line-height: 1.3333333;
+}
+h3 {
+  color: inherit;
+  font-weight: 600;
+  font-size: 1.25em;
+  margin-top: 1.6em;
+  margin-bottom: 0.6em;
+  line-height: 1.6;
+  opacity: 0.7;
+}
+h4 {
+  color: inherit;
+  font-weight: 600;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  line-height: 1.5;
+}
+
+p {
+  margin-top: 1.25em;
+  margin-bottom: 1.25em;
+}
+img {
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+ol {
+  margin-top: 1.25em;
+  margin-bottom: 1.25em;
+  list-style-type: none;
+}
+
+ul {
+  margin-top: 1.25em;
+  margin-bottom: 1.25em;
+  list-style-type: none;
+}
+
+li {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+ul > li p {
+  margin-top: 0.75em;
+  margin-bottom: 0.75em;
+}
+ol > li > *:first-child {
+  margin-top: 1.25em;
+}
+ol > li > *:last-child {
+  margin-bottom: 1.25em;
+}
+ul ul, ul ol, ol ul, ol ol {
+  margin-top: 0.75em;
+  margin-bottom: 0.75em;
+}
+hr + * {
+  margin-top: 0;
+}
+h2 + * {
+  margin-top: 0;
+}
+h3 + * {
+  margin-top: 0;
+}
+h4 + * {
+  margin-top: 0;
+}
+h6 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  opacity: 0.5;
+  font-weight: 500;
+  letter-spacing: 2px;
+}
+
+* {
+  scrollbar-color: var(--c-scrollbar) var(--c-bg);
+}
+
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar:horizontal {
+  height: 6px;
+}
+
+::-webkit-scrollbar-track, ::-webkit-scrollbar-corner {
+  background: var(--c-bg);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--c-scrollbar);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--c-scrollbar-hover);
+}
+
+
