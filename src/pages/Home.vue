@@ -24,23 +24,23 @@ const tools: Tool[] = [
   {
     title: '代码转换器',
     desc: '将源语言代码转换成目标语言代码。',
-    path: '/code-convert'
+    path: '/code-convert?mode=code'
   },
   {
     title: '类型转换器',
     desc: '将源语言类型转换成目标语言类型，支持JSON向各语言转换。',
-    path: '/type-convert'
+    path: '/code-convert?mode=type'
   },
-  {
-    title: '自然语言翻译',
-    desc: '自然语言翻译工具',
-    path: '/translation'
-  },
-  {
-    title: '变量命名',
-    desc: '提供描述信息，让ChatGPT帮你变量命名',
-    path: 'variable-name'
-  }
+  // {
+  //   title: '自然语言翻译',
+  //   desc: '自然语言翻译工具',
+  //   path: '/translation'
+  // },
+  // {
+  //   title: '变量命名',
+  //   desc: '提供描述信息，让ChatGPT帮你变量命名',
+  //   path: 'variable-name'
+  // }
 ]
 
 </script>
