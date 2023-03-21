@@ -89,6 +89,12 @@ const copyCode = async (type: string) => {
   }
 }
 
+const trimLineFeed = (str: string): string => {
+  return str.replace(/^\/n+|\/n+$/g, '')
+}
+
+
+
 const convertHandler = async () => {
   if (originCode.value.trim() === '') {
     ElMessage.info('请输入代码')
@@ -106,7 +112,7 @@ const convertHandler = async () => {
       ElMessage.error(res.message)
       return
     }
-    targetCode.value = res.data
+    targetCode.value = trimLineFeed(res.data).trim()
     loading.close()
   } catch(err: any) {
     loading.close()    
