@@ -36,11 +36,11 @@ const tools: Tool[] = [
   //   desc: '自然语言翻译工具',
   //   path: '/translation'
   // },
-  // {
-  //   title: '变量命名',
-  //   desc: '提供描述信息，让ChatGPT帮你变量命名',
-  //   path: 'variable-name'
-  // }
+  {
+    title: '变量命名',
+    desc: '提供描述信息，让ChatGPT帮你变量命名',
+    path: '/varibale-name'
+  }
 ]
 
 </script>
