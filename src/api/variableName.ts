@@ -6,5 +6,5 @@ interface VariableParams{
 }
 
 export const variableName = (params: VariableParams) => {
-  return axios.post<Response<string>>(`${BASE_URL}/variableName`, params)
+  return axios.post<Response<string>>(`${BASE_URL}/variable-name`, params)
 }
